@@ -1,299 +1,538 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Michael Smith AO</title>
-  <style>
-    html {
-      scroll-behavior: smooth;
-    }
-    body {
-      margin: 0;
-      font-family: Calibri, Arial, Helvetica, sans-serif;
-      font-size: 12pt;
-      line-height: 1.8;
-      background: linear-gradient(to bottom, #f7f9fb, #e3e8ef);
-      color: #333;
-      text-align: justify;
-    }
-    /* Sticky nav styles */
-    .sticky-nav {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: linear-gradient(to right, #1e3c72, #2a5298);
-      padding: 0;
-      margin: 0;
-      width: 100%;
-      border-bottom: 2px solid #c9a55a;
-      box-shadow: 0 2px 8px rgba(30,60,114,0.05);
-    }
-    .sticky-nav ul {
-      margin: 0;
-      padding: 0 2rem;
-      display: flex;
-      flex-wrap: wrap;
-      list-style: none;
-      justify-content: center;
-    }
-    .sticky-nav li {
-      margin: 0;
-      flex: 0 0 auto;
-    }
-    .sticky-nav a {
-      display: block;
-      color: #fff;
-      text-decoration: none;
-      font-weight: 500;
-      padding: 1rem 1.2rem;
-      transition: color 0.2s, background 0.2s;
-      border-bottom: 2px solid transparent;
-      font-size: 1rem;
-      letter-spacing: 0.01em;
-    }
-    .sticky-nav a:hover, .sticky-nav a:focus {
-      color: #f2d98d;
-      background: rgba(41,82,152,0.13);
-      border-bottom: 2px solid #c9a55a;
-    }
-    header {
-      background: linear-gradient(to right, #1e3c72, #2a5298);
-      color: white;
-      text-align: center;
-      padding: 3rem 1rem 2rem 1rem;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 2.2rem;
-      letter-spacing: 0.01em;
-    }
-    header p {
-      font-size: 1.2rem;
-      margin-top: 0.6rem;
-    }
-    .gold-stripe {
-      height: 4px;
-      background: linear-gradient(to right, #c9a55a, #f2d98d);
-    }
-    main {
-      max-width: 1000px;
-      margin: 2rem auto;
-      padding: 0 1rem;
-    }
-    section {
-      margin-bottom: 2.5rem;
-    }
-    section h2 {
-      color: #1e3c72;
-      border-bottom: 2px solid #c9a55a;
-      padding-bottom: 0.3rem;
-      margin-bottom: 1rem;
-      font-size: 1.4rem;
-    }
-    .mission {
-      background: #f0f0f0;
-      border-left: 6px solid #2a5298;
-      padding: 1rem 1.5rem;
-      margin-bottom: 2rem;
-    }
-    .credentials {
-      background: linear-gradient(to bottom, #fdf9f1, #f8f1df);
-      border: 1px solid #c9a55a;
-      padding: 1.5rem;
-      margin-bottom: 2.5rem;
-    }
-    .recognition {
-      background: #fffceb;
-      border: 1px solid #c9a55a;
-      padding: 1.5rem;
-      margin-bottom: 2.5rem;
-    }
-    .recognition b {
-      color: #2a2a2a;
-    }
-    ul {
-      margin: 1rem 0;
-      padding-left: 1.2rem;
-    }
-    ul li {
-      margin: 0.5rem 0;
-      list-style-type: disc;
-    }
-    footer {
-      background: #f0f0f0;
-      text-align: center;
-      padding: 1.5rem;
-      font-size: 0.95rem;
-      color: #555;
-    }
-    /* Responsive mobile menu */
-    @media (max-width: 900px) {
-      .sticky-nav ul {
-        padding: 0 0.5rem;
-      }
-      .sticky-nav a {
-        padding: 0.7rem 0.6rem;
-        font-size: 0.97rem;
-      }
-    }
-    @media (max-width: 768px) {
-      header {
-        padding: 2rem 1rem 1.2rem 1rem;
-      }
-      header h1 {
-        font-size: 1.49rem;
-      }
-      header p {
-        font-size: 1rem;
-      }
-      main {
-        padding: 0 0.2rem;
-      }
-      section h2 {
-        font-size: 1.07rem;
-      }
-      nav.sticky-nav ul {
-        padding: 0 0.1rem;
-      }
-      .sticky-nav a {
-        font-size: 0.95rem;
-        padding: 0.6rem 0.45rem;
-      }
-    }
-    @media (max-width: 550px) {
-      .sticky-nav ul {
-        flex-direction: column;
-        align-items: center;
-      }
-      .sticky-nav a {
-        width: 100vw;
-        text-align: center;
-        box-sizing: border-box;
-        padding-left: 0;
-        padding-right: 0;
-      }
-      .credentials,
-      .recognition {
-        padding: 1rem 0.7rem;
-      }
-      main {
-        padding: 0 0.01rem;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="description" content="Michael Smith AO - Distinguished business governance leader, management consultant, and board chair with over four decades of experience across corporate, government, arts and sporting organisations.">
+    <meta name="keywords" content="Michael Smith, governance, board effectiveness, management consulting, leadership development, Black House">
+    <meta name="author" content="Michael Smith AO">
+    <title>Michael Smith AO - Professional Profile</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Calibri', 'Arial', sans-serif;
+            font-size: clamp(11pt, 2vw, 12pt);
+            line-height: 1.8;
+            color: #2c3e50;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #c3cfe2 100%);
+            padding: clamp(20px, 4vw, 40px) clamp(10px, 2vw, 20px);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            border-radius: 12px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(90deg, #c9a55a 0%, #f2d98d 25%, #fff 50%, #f2d98d 75%, #c9a55a 100%);
+            animation: shimmer 3s infinite;
+            z-index: 10;
+        }
+        
+        @keyframes shimmer {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #0f2350 0%, #1e3c72 50%, #2a5298 100%);
+            color: white;
+            padding: clamp(40px, 6vw, 60px) clamp(30px, 6vw, 70px) clamp(35px, 5vw, 50px);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: min(500px, 80vw);
+            height: min(500px, 80vw);
+            background: radial-gradient(circle, rgba(201, 165, 90, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+        
+        .header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(90deg, #c9a55a 0%, #f2d98d 50%, #c9a55a 100%);
+            box-shadow: 0 2px 10px rgba(201, 165, 90, 0.5);
+        }
+        
+        h1 {
+            font-size: clamp(24pt, 5vw, 38pt);
+            font-weight: 300;
+            margin-bottom: 15px;
+            letter-spacing: clamp(1px, 0.2vw, 2px);
+            position: relative;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        
+        .subtitle {
+            font-size: clamp(11pt, 2vw, 13pt);
+            opacity: 0.95;
+            font-style: italic;
+            margin-top: 10px;
+            position: relative;
+            letter-spacing: 0.5px;
+        }
+        
+        .content {
+            padding: clamp(40px, 6vw, 60px) clamp(30px, 6vw, 70px);
+        }
+        
+        .mission {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-left: clamp(4px, 0.5vw, 6px) solid #2a5298;
+            border-radius: 8px;
+            padding: clamp(20px, 3vw, 30px) clamp(25px, 3.5vw, 35px);
+            margin-bottom: clamp(35px, 5vw, 50px);
+            font-size: clamp(11.5pt, 2vw, 13pt);
+            line-height: 1.9;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .mission::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: clamp(4px, 0.5vw, 6px);
+            height: 100%;
+            background: linear-gradient(180deg, #2a5298 0%, #c9a55a 100%);
+        }
+        
+        .mission p:first-child {
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+        
+        h2 {
+            color: #1e3c72;
+            font-size: clamp(16pt, 3vw, 20pt);
+            font-weight: 600;
+            margin: clamp(35px, 5vw, 50px) 0 clamp(20px, 3vw, 25px);
+            padding-bottom: clamp(10px, 1.5vw, 12px);
+            border-bottom: 3px solid #c9a55a;
+            position: relative;
+            letter-spacing: 0.5px;
+        }
+        
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: clamp(80px, 12vw, 100px);
+            height: 3px;
+            background: linear-gradient(90deg, #2a5298 0%, transparent 100%);
+        }
+        
+        h2:first-of-type {
+            margin-top: 0;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+        
+        ul {
+            list-style: none;
+            margin: clamp(15px, 2vw, 20px) 0;
+        }
+        
+        li {
+            padding-left: clamp(25px, 3vw, 30px);
+            margin-bottom: clamp(10px, 1.5vw, 12px);
+            position: relative;
+            transition: transform 0.2s ease;
+        }
+        
+        li:hover {
+            transform: translateX(5px);
+        }
+        
+        li::before {
+            content: '◆';
+            color: #c9a55a;
+            font-weight: bold;
+            font-size: 10pt;
+            position: absolute;
+            left: 0;
+            top: 2px;
+        }
+        
+        .section {
+            margin-bottom: clamp(30px, 4vw, 40px);
+            padding: clamp(20px, 3vw, 25px);
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            border-left: 3px solid transparent;
+            transition: all 0.3s ease;
+        }
+        
+        .section:hover {
+            border-left-color: #2a5298;
+            box-shadow: 0 4px 20px rgba(42, 82, 152, 0.1);
+        }
+        
+        .footer {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: clamp(30px, 4vw, 40px) clamp(30px, 6vw, 70px);
+            border-top: 4px solid #2a5298;
+            font-size: clamp(10pt, 1.8vw, 11pt);
+            color: #5a6c7d;
+            position: relative;
+        }
+        
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: -4px;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #2a5298 0%, #c9a55a 50%, #2a5298 100%);
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: clamp(15px, 3vw, 20px);
+        }
+        
+        .company-name {
+            font-weight: 600;
+            color: #1e3c72;
+            font-size: clamp(13pt, 2.5vw, 15pt);
+            margin-bottom: 5px;
+            letter-spacing: 1px;
+        }
+        
+        .credentials {
+            background: linear-gradient(135deg, #fffbf0 0%, #fff4d6 50%, #ffedb3 100%);
+            border: 2px solid #c9a55a;
+            border-radius: 10px;
+            padding: clamp(25px, 3.5vw, 30px) clamp(30px, 4vw, 35px);
+            margin: clamp(35px, 4vw, 40px) 0;
+            box-shadow: 0 8px 25px rgba(201, 165, 90, 0.15);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .credentials::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+        }
+        
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
+        .credentials h3 {
+            color: #8b6f2e;
+            font-size: clamp(12pt, 2.2vw, 14pt);
+            margin-bottom: 15px;
+            position: relative;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+        
+        .credentials ul {
+            margin: 0;
+            position: relative;
+        }
+        
+        .credentials li {
+            margin-bottom: 15px;
+            font-size: clamp(10.5pt, 1.9vw, 11pt);
+            background: rgba(255, 255, 255, 0.5);
+            padding: clamp(10px, 1.5vw, 12px) clamp(10px, 1.5vw, 12px) clamp(10px, 1.5vw, 12px) clamp(25px, 3vw, 30px);
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
+        
+        .credentials li:hover {
+            background: rgba(255, 255, 255, 0.8);
+            transform: translateX(8px);
+        }
+        
+        .credentials li::before {
+            color: #c9a55a;
+            font-size: 12pt;
+        }
+        
+        .credentials strong {
+            color: #1e3c72;
+            font-size: clamp(11pt, 2vw, 11.5pt);
+        }
+        
+        .credentials em {
+            display: block;
+            margin-top: 6px;
+            font-size: clamp(10pt, 1.8vw, 10.5pt);
+            color: #5a6c7d;
+            line-height: 1.6;
+            padding-left: 15px;
+            border-left: 2px solid #c9a55a;
+        }
+        
+        a {
+            color: #2a5298;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            word-break: break-word;
+        }
+        
+        a:hover {
+            color: #c9a55a;
+            text-decoration: underline;
+        }
+        
+        /* Tablet Layout */
+        @media (max-width: 1024px) {
+            .container {
+                max-width: 95%;
+            }
+        }
+        
+        /* Mobile Layout */
+        @media (max-width: 768px) {
+            body {
+                padding: 20px 10px;
+            }
+            
+            .header, .content, .footer {
+                padding: 30px 25px;
+            }
+            
+            h1 {
+                font-size: 24pt;
+            }
+            
+            h2 {
+                font-size: 16pt;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+            }
+            
+            .section {
+                padding: 20px;
+            }
+            
+            p {
+                text-align: left;
+            }
+            
+            li:hover {
+                transform: none;
+            }
+        }
+        
+        /* Small Mobile */
+        @media (max-width: 480px) {
+            .header, .content, .footer {
+                padding: 25px 20px;
+            }
+            
+            .mission {
+                padding: 20px;
+            }
+            
+            .credentials {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 20pt;
+                letter-spacing: 1px;
+            }
+            
+            h2 {
+                font-size: 14pt;
+            }
+        }
+        
+        /* Print Styles */
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            
+            .container {
+                box-shadow: none;
+                max-width: 100%;
+            }
+            
+            .section:hover {
+                border-left-color: transparent;
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            }
+            
+            li:hover {
+                transform: none;
+            }
+            
+            .credentials::before {
+                animation: none;
+            }
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <h1>Michael Smith AO</h1>
-    <p>"Developing leaders through their most defining decisions"</p>
-  </header>
-  <div class="gold-stripe"></div>
-  <nav class="sticky-nav" aria-label="Main navigation">
-    <ul>
-      <li><a href="#mission">Mission</a></li>
-      <li><a href="#whatido">What I Do</a></li>
-      <li><a href="#roles">Current Roles</a></li>
-      <li><a href="#background">Background</a></li>
-      <li><a href="#recognition">Recognition</a></li>
-      <li><a href="#clients">Who I Work With</a></li>
-      <li><a href="#approach">Approach</a></li>
-      <li><a href="#published">Published Work</a></li>
-      <li><a href="#footer">Contact</a></li>
-    </ul>
-  </nav>
-  <main>
-    <div class="mission" id="mission">
-      <p>
-        My interest lies in helping the leaders, and their teams, of purposeful organisations deal with their most consequential, complex, culture-shaping decisions.
-      </p>
-      <p>
-        I work with boards and executive teams by being present at the table during critical decisions. Leaders develop capabilities whilst making real decisions on real challenges, not through workshops or coaching sessions removed from operational context.
-      </p>
+    <div class="container">
+        <div class="header">
+            <h1>Michael Smith AO</h1>
+            <div class="subtitle">Developing leaders through their most defining decisions</div>
+        </div>
+        
+        <div class="content">
+            <div class="mission">
+                <p>My interest lies in helping the leaders, and their teams, of purposeful organisations deal with their most consequential, complex, culture-shaping decisions.</p>
+                
+                <p>I work with boards and executive teams by being present at the table during critical decisions. Leaders develop capabilities whilst making real decisions on real challenges, not through workshops or coaching sessions removed from operational context.</p>
+            </div>
+            
+            <div class="section">
+                <h2>What I Do</h2>
+                <p>Through Black House, I provide strategic support to boards and leadership teams facing complex challenges. This typically includes:</p>
+                <ul>
+                    <li>Board effectiveness reviews and development programmes</li>
+                    <li>Executive team performance and culture work</li>
+                    <li>Strategic guidance during periods of significant change or complexity</li>
+                    <li>Independent chair or director roles during critical periods</li>
+                </ul>
+                <p>Relationships should rely on value not contracts. While most relationships span years, allowing for development through multiple decision cycles, the best way to find value and relevance is to start with a small defined role with clear benefit.</p>
+                <p>I am currently working with an advanced model of AI assistance for coaching, exploring how technology can enhance leadership development.</p>
+            </div>
+            
+            <div class="section">
+                <h2>Current Roles</h2>
+                <ul>
+                    <li>Chair, Starbucks Australia (since 2015)</li>
+                    <li>Director, AusCycling (since 2020, Chair of High Performance Committee)</li>
+                    <li>Chair, Football Innovations Committee, West Coast Eagles (since 2025)</li>
+                    <li>Mentor in Residence, Hawaiian (since 2024)</li>
+                    <li>Patron, Co3 Dance Company</li>
+                    <li>Principal, Black House (since 2009)</li>
+                </ul>
+            </div>
+            
+            <div class="section">
+                <h2>Background</h2>
+                <p>Over the past four decades, I have served as chair or director across corporate, government, not-for-profit, arts and sporting organisations. This includes:</p>
+                <ul>
+                    <li>Chair of 7-Eleven Australia during its remediation and turnaround, leading a very successful sale process exceeding $1.5 billion (2015-2024). This work is frequently cited as an example of effective crisis management</li>
+                    <li>Chair of iiNet during a period of growth, culminating in a very successful sale process exceeding $1.5 billion (2009-2015)</li>
+                    <li>Chair of Pioneer Credit (2014-2023)</li>
+                    <li>Chair of West Coast Eagles during a transitional period (1999-2002)</li>
+                    <li>Chair of state energy suppliers Synergy and Verve (2006-2014)</li>
+                    <li>Chair of Perth International Arts Festival (2006-2012)</li>
+                    <li>National President and Chairman of the Australian Institute of Company Directors (2013-2015)</li>
+                    <li>Managing Director and founder of The Marketing Centre (1979-2008), a leading marketing research and strategy firm serving blue-chip clients for 30 years</li>
+                    <li>Director and equity holder in fashion house Poppy Lissiman</li>
+                </ul>
+                <p>I have provided strategic advisory services to many leading organisations including St John of God Health Care, RAC, HBF, Navitas, Hawaiian, Satterley Property Group, Brightwater, CBH, Chamber of Minerals and Energy WA, and numerous other institutions across government and private sectors.</p>
+            </div>
+            
+            <div class="credentials">
+                <h3>Recognition</h3>
+                <p>In recent years, I have been fortunate to receive recognition for contributions to governance and management consulting:</p>
+                <ul>
+                    <li><strong>Officer of the Order of Australia (AO)</strong>, King's Birthday Honours 2024<br>
+                    <em>For distinguished service to business governance, to the management consulting sector, to sports administration, and to the arts.</em></li>
+                    <li><strong>AICD Gold Medal Award (WA)</strong>, 2025<br>
+                    <em>Recognised as outstanding in directorship and providing valuable contributions to the AICD; demonstrating significant contribution to the Western Australian community through board work; actively supporting and leading good governance practices through education, mentoring and stewardship; embodying directorial values of excellence and integrity.</em></li>
+                    <li>AICD Fellow</li>
+                    <li>Life Member, West Coast Eagles</li>
+                    <li><strong>Honorary Doctor of Letters (DLitt)</strong>, University of Western Australia, March 2014<br>
+                    <em>In recognition of significant contributions to the business sector and the arts.</em></li>
+                    <li><strong>Patron's Medal</strong>, His Royal Highness Prince Philip, Australian Marketing Institute<br>
+                    <em>In recognition of services to marketing.</em></li>
+                    <li>Certified Management Consultant (IMC)</li>
+                    <li>Previously Fellow of Australian Institute of Management (AIM) and Australian Marketing Institute (AMI)</li>
+                </ul>
+            </div>
+            
+            <div class="section">
+                <h2>Who I Work With</h2>
+                <p>I typically work with:</p>
+                <ul>
+                    <li>Boards and chairs facing complex governance challenges</li>
+                    <li>CEOs and executive teams navigating significant transitions</li>
+                    <li>Organisations requiring independent expertise during critical periods</li>
+                    <li>Boards seeking to lift their collective effectiveness</li>
+                </ul>
+                <p>Client organisations have ranged from ASX-listed companies to government entities, from large not-for-profits to private enterprises across multiple sectors.</p>
+            </div>
+            
+            <div class="section">
+                <h2>Approach</h2>
+                <p>Board work is a team activity. Directors decide collectively and need to function as high-performing teams, adapting processes and judgement to the matters before them.</p>
+                <p>My work focuses on helping boards and leadership teams reach their potential as guardians and leaders of their organisations. This is less about scoring past performance and more about identifying the next stage of evolution and collaborating on plans that can be successfully implemented.</p>
+                <p>The work is evidence-based, using relevant benchmarks and established instruments to compare purpose, principles, practices and performance against comparable organisations.</p>
+            </div>
+            
+            <div class="section">
+                <h2>Published Work</h2>
+                <p>I contributed to <em>Age of Doubt: Navigating Mistrust in Modern Society</em>, a collection examining how trust is disappearing and how we might navigate these times. The book brings together global experts in media, science, government, academia and business to explore the foundations of institutional trust and paths forward.</p>
+                <p>As reviewer Michelle Grattan observed: "Trust is the golden thread that binds our democracy, yet it is fraying. This book is a rich and diverse trove of information and opinions on dealing with a central issue of our time."</p>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <div class="footer-content">
+                <div>
+                    <div class="company-name">Black House</div>
+                    <div>610/20 Gugeri Street, Claremont, Western Australia</div>
+                    <div style="margin-top: 8px;">Email: <a href="mailto:mjs@blackhouse.com.au">mjs@blackhouse.com.au</a></div>
+                </div>
+                <div>
+                    <div>Principal: Michael Smith AO FAICD</div>
+                </div>
+            </div>
+        </div>
     </div>
-
-    <section id="whatido">
-      <h2>What I Do</h2>
-      <p>Through Black House, I provide strategic support to boards and leadership teams facing complex challenges. This typically includes:</p>
-      <ul>
-        <li>Board effectiveness reviews and development programmes</li>
-        <li>Executive team performance and culture work</li>
-        <li>Strategic guidance during periods of significant change or complexity</li>
-        <li>Independent chair or director roles during critical periods</li>
-      </ul>
-      <p>My approach involves sustained engagement rather than project-based consulting. Most client relationships span several years, allowing for development through multiple decision cycles.</p>
-    </section>
-
-    <section id="roles">
-      <h2>Current Roles</h2>
-      <ul>
-        <li>Chair, Starbucks Australia (since 2015)</li>
-        <li>Director, AusCycling (since 2020, Chair of High Performance Committee)</li>
-        <li>Chair, Football Innovations Committee, West Coast Eagles (since 2025)</li>
-        <li>Mentor in Residence, Hawaiian (since 2024)</li>
-        <li>Patron, Co3 Dance Company</li>
-        <li>Principal, Black House (since 2009)</li>
-      </ul>
-    </section>
-
-    <section id="background">
-      <h2>Background</h2>
-      <p>Over the past four decades, I have served as chair or director across corporate, government, not-for-profit, arts and sporting organisations. This includes:</p>
-      <ul>
-        <li>Chair of 7-Eleven Australia during its remediation and turnaround (2015-2024). This work is frequently cited as an example of effective crisis management</li>
-        <li>Chair of iiNet during a period of growth, culminating in a very successful sale process exceeding $1.5 billion (2009-2015)</li>
-        <li>Chair of 7-Eleven Stores PL, leading a very successful sale process exceeding $1.5 billion</li>
-        <li>Chair of Pioneer Credit (2014-2023)</li>
-        <li>Chair of West Coast Eagles during a transitional period (1999-2002)</li>
-        <li>Chair of state energy suppliers Synergy and Verve (2006-2014)</li>
-        <li>Chair of Perth International Arts Festival (2006-2012)</li>
-        <li>National President and Chairman of the Australian Institute of Company Directors (2013-2015)</li>
-        <li>Managing Director and founder of The Marketing Centre (1979-2008), a leading marketing research and strategy firm serving blue-chip clients for 30 years</li>
-      </ul>
-      <p>I have provided strategic advisory services to many leading organisations including St John of God Health Care, RAC, HBF, Navitas, Hawaiian, Satterley Property Group, Brightwater, CBH, Chamber of Minerals and Energy WA, and numerous other institutions across government and private sectors.</p>
-    </section>
-
-    <div class="recognition" id="recognition">
-      <h2>Recognition</h2>
-      <ul>
-        <li><b>Officer of the Order of Australia (AO), King's Birthday Honours 2024</b><br><i>For distinguished service to business governance, to the management consulting sector, to sports administration, and to the arts.</i></li>
-        <li><b>AICD Gold Medal Award (WA), 2025</b><br><i>Recognised as outstanding in directorship and providing valuable contributions to the AICD; demonstrating significant contribution to the WA community through board work; actively supporting and leading good governance practices through education, mentoring and stewardship; embodying directorial values of excellence and integrity.</i></li>
-        <li><b>AICD Fellow</b></li>
-        <li><b>Life Member, West Coast Eagles</b></li>
-        <li><b>Honorary Doctor of Letters (DLitt), University of Western Australia, March 2014</b><br><i>In recognition of significant contributions to the business sector and the arts.</i></li>
-        <li><b>Patron's Medal, His Royal Highness Prince Philip, Australian Marketing Institute</b><br><i>In recognition of services to marketing.</i></li>
-        <li><b>Certified Management Consultant (IMC)</b></li>
-        <li>Previously Fellow of Australian Institute of Management (AIM) and Australian Marketing Institute (AMI)</li>
-      </ul>
-    </div>
-
-    <section id="clients">
-      <h2>Who I Work With</h2>
-      <ul>
-        <li>Boards and chairs facing complex governance challenges</li>
-        <li>CEOs and executive teams navigating significant transitions</li>
-        <li>Organisations requiring independent expertise during critical periods</li>
-        <li>Boards seeking to lift their collective effectiveness</li>
-      </ul>
-      <p>Client organisations have ranged from ASX-listed companies to government entities, from large not-for-profits to private enterprises across multiple sectors.</p>
-    </section>
-
-    <div class="credentials" id="approach">
-      <h2>Approach</h2>
-      <p>Board work is a team activity. Directors decide collectively and need to function as high-performing teams, adapting processes and judgement to the matters before them.</p>
-      <p>My work focuses on helping boards and leadership teams reach their potential as guardians and leaders of their organisations. This is less about scoring past performance and more about identifying the next stage of evolution and collaborating on plans that can be successfully implemented.</p>
-      <p>The work is evidence-based, using relevant benchmarks and established instruments to compare purpose, principles, practices and performance against comparable organisations.</p>
-    </div>
-
-    <section id="published">
-      <h2>Published Work</h2>
-      <p>I contributed to <i>Age of Doubt: Navigating Mistrust in Modern Society</i>, a collection examining how trust is disappearing and how we might navigate these times. The book brings together global experts in media, science, government, academia and business to explore the foundations of institutional trust and paths forward.</p>
-      <p>As reviewer Michelle Grattan observed: "Trust is the golden thread that binds our democracy, yet it is fraying. This book is a rich and diverse trove of information and opinions on dealing with a central issue of our time."</p>
-    </section>
-  </main>
-  <footer id="footer">
-    Black House &nbsp;•&nbsp; 610/20 Gugeri Street, Claremont, Western Australia <br>
-    Principal: Michael Smith AO FAICD
-  </footer>
 </body>
 </html>
